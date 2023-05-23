@@ -1,6 +1,5 @@
 String.prototype.toJadenCase = function () {
-    let str = "How can mirrors be real if our eyes aren't real";
-    let strArr = str.split(" ");
+    let strArr = this.split(" "); //'this' keyword refers to the string object in question
     
     let newArr = [];
    
