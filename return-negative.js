@@ -22,3 +22,5 @@ if(num < 0){
     return 0;
     }
 }
+
+console.log(makeNegative(-7));
