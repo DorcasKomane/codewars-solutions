@@ -12,6 +12,19 @@
 
 //my solution:
 function findNextSquare(sq) {
-    // Return the next square if sq is a perfect square, -1 otherwise
-    return -1;
+    //Return the next square if sq is a perfect square, -1 otherwise
+    let foundNextSquare = false;
+    if(Number.isInteger(Math.sqrt(sq))){
+        while(foundNextSquare !== true){
+            sq++
+            if(Number.isInteger(Math.sqrt(sq))){
+                foundNextSquare = true;
+                return sq;
+            }
+        }
+    }else{
+        return -1;
+    }
   }
+
+  console.log(findNextSquare(121));
