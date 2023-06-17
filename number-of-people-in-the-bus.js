@@ -38,11 +38,9 @@
     //add up total number that got on the bus - totalGotOn
         //loop through each array pair and add up first elements
         //save result in totalGotOn
-        
     //add up total number that got off the bus - totalGotOff
         //loop through each array pair and add up second elements
         //save result in totalGotOff
-        
     //subtract totalGotOff from totalGotOn
     //return result
 
