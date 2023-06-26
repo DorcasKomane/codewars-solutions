@@ -4,9 +4,23 @@
 
 //my solution:
 function fakeBin(x){
-    let str1 = x.replace(/[0-4]/g, '0');
-    newStr = str1.replace(/[5-9]/g, '1');
+    //solution #1
+    //let newStr = x.replace(/[0-4]/g, '0').replace(/[5-9]/g, '1');
+    //return newStr;
 
-    return newStr;
+    //solution #2
+    let xArr = x.split('');
+
+    function binary(item){
+        if(item < 5){
+            return '0';
+        }else if(item >= 5){
+            return '1';
+        }
+    }
+
+    let newStr = xArr.map(binary);
+
+    return newStr.join('');
 }
 console.log(fakeBin('45385593107843568'));
