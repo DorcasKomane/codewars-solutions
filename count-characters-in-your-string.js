@@ -4,20 +4,34 @@
 // What if the string is empty? Then the result should be empty object literal, {}.
 
 function count(string) {
-    if(string === ''){
-        return {};
+
+    //solution #1
+    // if(string === ''){
+    //     return {};
+    // }
+
+    // let str = string.split('');
+
+    // let count = str.reduce((map, char) => {
+    //     map[char] = (map[char] || 0) + 1;
+
+    //     return map;
+    // }, {}); 
+
+    // return count;
+
+    //solution #2
+    const occurrences = {};
+    for (let i = 0; i < string.length; i++){
+        const ch = string[i];
+        if(!occurrences[ch]){
+            occurrences[ch] = 0;
+        }
+
+        occurrences[ch]++;
     }
-    //split string into array in order to apply array methods
-    let str = string.split('');
 
-    //apply reduce and map methods
-    let count = str.reduce((map, char) => {
-        map[char] = (map[char] || 0) + 1;
-
-        return map;
-    }, {}); 
-
-    return count;
+    return occurrences;
 }
 
 console.log(count('aba'));
