@@ -30,7 +30,7 @@ function wave(str){
             let nextStr = str.slice(0, i) + str.charAt(i).toUpperCase() + str.slice(i + 1);
             waveArr.push(nextStr);
 
-            nextStr = str;
+            nextStr = str; //reset string to original 
         }
       }
     }
