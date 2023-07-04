@@ -10,6 +10,8 @@
 //my solution:
 console.log('testing')
 function digitize(n) {
+
+    //solution #1
     let reverseArr = n.toString().split('').reverse();
     let digitArr = [];
     for(let i =0; i < reverseArr.length; i++){
@@ -17,6 +19,9 @@ function digitize(n) {
         digitArr.push(reverseArr[i]);
     }
     return digitArr;
+
+    //solution #2
+    // return n.toString().split('').reverse().map(Number);
 }
 
 console.log(digitize(35231));
