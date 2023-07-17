@@ -11,5 +11,17 @@
 
 //my solution:
 function testEven(n) {
+    let isEven = true;
+    let checkFloat = String(n).split('.');
     
+    if(checkFloat[1] > 0){
+        isEven = false;
+    }else if(n % 2 === 0){
+        isEven = true;
+    }else{
+        isEven = false;
+    }
+    return isEven;
 }
+
+console.log(testEven(1));
