@@ -10,4 +10,4 @@ function removeUrlAnchor(url){
     return urlIndex === - 1 ? url : url.slice(0, urlIndex);
 }
 
-console.log(removeUrlAnchor('www.codewars.com/katas/'));
+console.log(removeUrlAnchor('www.codewars.com#about'));
