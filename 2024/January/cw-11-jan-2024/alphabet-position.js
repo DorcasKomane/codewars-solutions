@@ -17,7 +17,7 @@
 
 function alphabetPosition(text) {
     let alphabet = "abcdefghijklmnopqrstuvwxyz";
-    const lowerCaseText = text.toLowerCase();
+    const lowerCaseText = text.replace(/([^a-z])/ig, '').toLowerCase();
     let newStr = ' '; 
 
     const regex = /[a-z]/g;
@@ -25,15 +25,11 @@ function alphabetPosition(text) {
     for(let i = 0; i < lowerCaseText.length; i++){
         let position = alphabet.indexOf(lowerCaseText[i]) + 1;
         if(lowerCaseText.match(regex)){
-            // console.log(`${position}`);
             newStr += `${position} `;
         }
-        else{
-
-        };
     }
 
-    return newStr;
+    return newStr.trim();
 }
 
 console.log(alphabetPosition("The sunset sets at twelve o' clock."));
