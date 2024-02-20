@@ -19,24 +19,35 @@
 
 // FUNDAMENTALS
 
+
 function sumArray(array) {
-    if(array === null || array.length === 0 || array.length === 1 || array.length === 2){
+    // Validate the input
+    if(!array || array.length === 0 || array.length === 1 || array.length === 2){
         return 0;
     }
-     let sum = 0;
-    const minValue = Math.min(...array);
-    const maxValue = Math.max(...array);
-    console.log(minValue);
-    // console.log(array.indexOf(minValue));
-    console.log(maxValue);
-    // console.log(array.indexOf(maxValue));
 
-    for(let i = 0; i < array.length; i++){
-        
-    }
-
+    // Find the minimum and maximum values in the array
+    let min = Math.min(...array);
+    let max = Math.max(...array);
+  
+    // Flag variables to track whether min and max have been excluded
+    let minExcluded = false;
+    let maxExcluded = false;
+  
+    // Sum all numbers excluding the first occurrence of min and max
+    let sum = array.reduce((acc, num) => {
+      if (num === min && !minExcluded) {
+        minExcluded = true;
+      } else if (num === max && !maxExcluded) {
+        maxExcluded = true;
+      } else {
+        return acc + num;
+      }
+      return acc;
+    }, 0);
+  
     return sum;
-}
+  }
 
 console.log(sumArray(null));
 console.log(sumArray([ ]));
