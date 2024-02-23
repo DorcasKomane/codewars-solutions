@@ -16,22 +16,7 @@
 // REGULAR EXPRESSIONS FUNDAMENTALS STRINGS
 
 function stringClean(s){
-    const regex = /[a-zA-Z]/g;
-    const specialChar = /[^a-zA-Z]+/
-    const numbers = '123456789'
-    let newArr = [];
-
-    if(!s.match(regex)){
-       return s;
-    }else{
-        for(let i = 0; i < s.length; i++){
-            if(numbers.indexOf(s[i]) === -1){
-                newArr.push(s[i])
-            }
-        }
-    }
-
-    return newArr.join('');
+    return s.replace(/[0-9]/g, '');
 }
 
 console.log(stringClean(""));
